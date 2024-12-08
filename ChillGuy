@@ -1,0 +1,36 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = player.PlayerGui
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 150)
+frame.Position = UDim2.new(0.5, -150, 0.5, -75)
+frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+frame.BackgroundTransparency = 0.5
+frame.Parent = screenGui
+
+local message = Instance.new("TextLabel")
+message.Size = UDim2.new(1, 0, 1, 0)
+message.Position = UDim2.new(0, 0, 0, 0)
+message.BackgroundTransparency = 1
+message.Text = "I stole your info... JK, I'm a chill mf 😎"
+message.TextColor3 = Color3.fromRGB(0, 255, 255)
+message.TextSize = 24
+message.TextWrapped = true
+message.TextAlign = Enum.TextAlignment.Center
+message.Parent = frame
+
+local dismissButton = Instance.new("TextButton")
+dismissButton.Size = UDim2.new(0, 100, 0, 50)
+dismissButton.Position = UDim2.new(0.5, -50, 1, -60)
+dismissButton.Text = "Got it!"
+dismissButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+dismissButton.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+dismissButton.TextSize = 20
+dismissButton.Parent = frame
+
+dismissButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
